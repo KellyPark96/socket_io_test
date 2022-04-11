@@ -1,7 +1,7 @@
 import express from "Express";
 
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 const http = require("http");
 const server = http.createServer(app);
 const { Server } = require("socket.io");
@@ -15,9 +15,8 @@ const handleHome = (req, res) => {
 app.get("/", handleHome);
 
 io.on("connection", (socket) => {
-	console.log("a user connected");
-	socket.on("disconnect", () => {
-		console.log("user disconnected");
+	socket.on("chat message", (msg) => {
+		io.emit("chat message", msg);
 	});
 });
 
