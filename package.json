@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"description": "my first socket.io app",
 	"scripts": {
-		"dev": "nodemon --exec babel-node index.js"
+		"socket": "nodemon --exec babel-node socket.js"
 	},
 	"dependencies": {
 		"express": "^4.17.3",

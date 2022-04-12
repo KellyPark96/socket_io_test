@@ -8,7 +8,7 @@ const { Server } = require("socket.io");
 const io = new Server(server);
 
 const handleHome = (req, res) => {
-	res.sendFile(__dirname + "/index.html");
+	res.sendFile(__dirname + "/socket.html");
 	// return res.send("<h1>Hello World</h1>");
 };
 
